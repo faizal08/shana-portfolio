@@ -19,12 +19,25 @@
     </script>
     <style>
         .slider-btn {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(4px);
             transition: all 0.3s ease;
         }
-        .slider-btn:hover {
-            background: rgba(255, 255, 255, 1);
+
+        /* Responsive Arrow Visibility */
+        /* Show arrows by default (Mobile) */
+        .slider-btn {
+            opacity: 1;
+        }
+
+        /* On Desktop (768px and up), hide them and show only on hover */
+        @media (min-width: 768px) {
+            .slider-btn {
+                opacity: 0;
+            }
+            .group:hover .slider-btn {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -55,14 +68,14 @@
              alt="Calicut Mobility Hub Design"
              class="w-full h-full object-cover transition-opacity duration-500">
 
-        <button onclick="changeImage(-1)" class="slider-btn absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100">
+        <button onclick="changeImage(-1)" class="slider-btn absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md z-10">
             <span class="text-xl">←</span>
         </button>
-        <button onclick="changeImage(1)" class="slider-btn absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100">
+        <button onclick="changeImage(1)" class="slider-btn absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md z-10">
             <span class="text-xl">→</span>
         </button>
 
-        <div class="absolute bottom-4 right-6 text-[10px] uppercase tracking-widest bg-white/80 px-3 py-1 rounded-full">
+        <div class="absolute bottom-4 right-6 text-[10px] uppercase tracking-widest bg-white/80 px-3 py-1 rounded-full z-10">
             <span id="imageNum">1</span> / 2
         </div>
     </div>
@@ -124,12 +137,9 @@
 
     function changeImage(direction) {
         currentIndex += direction;
-
-        // Loop logic
         if (currentIndex >= images.length) currentIndex = 0;
         if (currentIndex < 0) currentIndex = images.length - 1;
 
-        // Update elements
         imgElement.style.opacity = 0;
         setTimeout(() => {
             imgElement.src = images[currentIndex];
