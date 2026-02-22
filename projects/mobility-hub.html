@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makbool Residence | Ar. Shana Rahmath</title>
+    <title>Mobility Hub Calicut | Ar. Shana Rahmath</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -17,81 +17,127 @@
             }
         }
     </script>
+    <style>
+        .slider-btn {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+        }
+        .slider-btn:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+    </style>
 </head>
 <body class="bg-white text-neutral-900 font-sans antialiased">
 
-<nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 py-8 flex justify-between items-center border-b border-neutral-100">
-        <div class="text-lg font-medium tracking-[0.2em] uppercase">
-            <a href="../index.html" class="hover:opacity-70 transition-opacity">Ar. SHANA RAHMATH</a>
+<nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-100">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-lg font-medium tracking-[0.2em] uppercase text-center md:text-left">
+            <a href="../index.html">Ar. SHANA RAHMATH</a>
         </div>
-        <a href="../index.html" class="text-[10px] uppercase tracking-widest text-neutral-400 hover:text-black transition-colors flex items-center">
-            <span class="mr-2">←</span> Back to Projects
-        </a>
+        <div class="flex space-x-8 uppercase text-[10px] tracking-widest text-neutral-400">
+            <a href="../index.html" class="hover:text-black transition">Work</a>
+            <a href="../about.html" class="hover:text-black transition">About</a>
+            <a href="../contact.html" class="hover:text-black transition">Contact</a>
+        </div>
     </div>
 </nav>
 
-<article class="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
-    <header class="border-b border-neutral-100 pb-12 mb-12">
-        <h1 class="text-4xl md:text-6xl font-light tracking-tight mb-8">Makbool Residence</h1>
+<main class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20">
+    <div class="mb-12">
+        <h1 class="text-3xl md:text-5xl font-light mb-4 text-neutral-900">Mobility Hub, Calicut</h1>
+        <p class="text-[10px] uppercase tracking-[0.3em] text-neutral-400">Urban Infrastructure | Transit Oriented Development</p>
+    </div>
 
-        <div class="flex flex-wrap gap-8 md:gap-16 text-[10px] uppercase tracking-[0.2em] text-neutral-400">
-            <div>
-                <span class="block text-neutral-300 mb-1 font-medium">Location</span>
-                <span class="text-neutral-900">Malappuram, Kerala</span>
-            </div>
-            <div>
-                <span class="block text-neutral-300 mb-1 font-medium">Area</span>
-                <span class="text-neutral-900">2300 SQFT</span>
-            </div>
-            <div>
-                <span class="block text-neutral-300 mb-1 font-medium">Year</span>
-                <span class="text-neutral-900">2023</span>
-            </div>
-            <div>
-                <span class="block text-neutral-300 mb-1 font-medium">Category</span>
-                <span class="text-neutral-900">Residential</span>
-            </div>
-        </div>
-    </header>
+    <div class="relative group aspect-[16/9] overflow-hidden bg-neutral-100 mb-16">
+        <img id="projectImage"
+             src="../assets/images/work/mobility_hub.png"
+             alt="Calicut Mobility Hub Design"
+             class="w-full h-full object-cover transition-opacity duration-500">
 
-    <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
-        <div class="lg:col-span-8">
-            <p class="text-xl md:text-2xl font-light text-neutral-600 leading-relaxed italic">
-                "A home that celebrates its natural surroundings and creates a connection with the outdoors. Large windows blur the lines between indoors and outdoors, bringing in natural light and fostering a connection with nature."
-            </p>
-        </div>
-        <div class="lg:col-span-4 text-sm text-neutral-500 leading-relaxed">
-            <p>Clean lines, minimalist furniture, and a neutral colour palette create a modern feel. Natural materials like wood and stone plastering finishes are used throughout for a cohesive architectural look.</p>
-        </div>
-    </section>
+        <button onclick="changeImage(-1)" class="slider-btn absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100">
+            <span class="text-xl">←</span>
+        </button>
+        <button onclick="changeImage(1)" class="slider-btn absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100">
+            <span class="text-xl">→</span>
+        </button>
 
-    <section class="space-y-12 md:space-y-24">
-        <div class="bg-neutral-50 overflow-hidden">
-            <img src="../assets/images/work/makbool-hero.jpg" alt="Exterior View" class="w-full h-auto">
+        <div class="absolute bottom-4 right-6 text-[10px] uppercase tracking-widest bg-white/80 px-3 py-1 rounded-full">
+            <span id="imageNum">1</span> / 2
         </div>
+    </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            <div class="bg-neutral-50 overflow-hidden">
-                <img src="../assets/images/work/makbool-interior-1.jpg" alt="Interior View" class="w-full h-auto">
-            </div>
-            <div class="bg-neutral-50 overflow-hidden">
-                <img src="../assets/images/work/makbool-interior-2.jpg" alt="Detail View" class="w-full h-auto">
-            </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+        <div class="md:col-span-8 space-y-12">
+            <section>
+                <h2 class="text-[10px] uppercase tracking-[0.3em] text-neutral-400 mb-6 border-b border-neutral-100 pb-2">About the Project</h2>
+                <div class="space-y-6 text-lg text-neutral-600 leading-relaxed text-justify">
+                    <p>
+                        Calicut Mobility Hub is a Transit-Oriented Development designed as a solution for existing transportation challenges. Through the redevelopment and reimagining of transit infrastructure, the project aims to create a transport-friendly and convenient hub for the public.
+                    </p>
+                    <p>
+                        The design creates a comfortable traveling experience by seamlessly linking different modes of transport—including monorail, buses, auto-taxis, and bicycles. This integration enables safe, secure movement and improves overall accessibility throughout the city.
+                    </p>
+                </div>
+            </section>
         </div>
 
-        <div class="max-w-4xl mx-auto py-12 md:py-24 border-t border-neutral-100">
-            <h4 class="text-[10px] uppercase tracking-[0.3em] text-neutral-400 mb-8 text-center">Technical Drawings</h4>
-            <img src="../assets/images/work/makbool-plan.jpg" alt="Floor Plan" class="w-full h-auto opacity-80 hover:opacity-100 transition-opacity duration-500">
+        <div class="md:col-span-4 space-y-8">
+            <div class="bg-neutral-50 p-8 border border-neutral-100">
+                <h2 class="text-[10px] uppercase tracking-[0.3em] text-neutral-400 mb-6 border-b border-neutral-200 pb-2">Project Details</h2>
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <span class="block text-[10px] uppercase text-neutral-400">Location</span>
+                        <span class="font-medium">Malaparamba, Calicut, Kerala</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] uppercase text-neutral-400">Category</span>
+                        <span class="font-medium">Architectural Design Project (S9)</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] uppercase text-neutral-400">Focus</span>
+                        <span class="font-medium">Transit Integration & Safety</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] uppercase text-neutral-400">Status</span>
+                        <span class="font-medium">Conceptual Design</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
-</article>
+    </div>
+</main>
 
-<footer class="border-t border-neutral-100 py-16 text-center">
-    <p class="text-[10px] tracking-[0.3em] text-neutral-300 uppercase">
-        © 2024 Ar. Shana Rahmath | Perithalmanna, Kerala
-    </p>
+<footer class="border-t border-neutral-100 py-12 text-center">
+    <p class="text-[10px] tracking-[0.3em] text-neutral-300 uppercase italic">© 2026 Ar. Shana Rahmath</p>
 </footer>
+
+<script>
+    const images = [
+        "../assets/images/work/mobility_hub.png",
+        "../assets/images/work/mobility_hub_view2.png"
+    ];
+
+    let currentIndex = 0;
+    const imgElement = document.getElementById('projectImage');
+    const numElement = document.getElementById('imageNum');
+
+    function changeImage(direction) {
+        currentIndex += direction;
+
+        // Loop logic
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+
+        // Update elements
+        imgElement.style.opacity = 0;
+        setTimeout(() => {
+            imgElement.src = images[currentIndex];
+            imgElement.style.opacity = 1;
+            numElement.innerText = currentIndex + 1;
+        }, 200);
+    }
+</script>
 
 </body>
 </html>
