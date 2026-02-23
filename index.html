@@ -15,7 +15,7 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        serif: ['Cormorant Gramond', 'serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
                     },
                     letterSpacing: {
                         'editorial': '.5em',
@@ -46,7 +46,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            filter: grayscale(100%) brightness(0.9) opacity(0.12); /* Subtle architectural watermark */
+            filter: grayscale(100%) brightness(0.9) opacity(0.12);
         }
 
         #project-carousel {
@@ -99,6 +99,16 @@
             0% { transform: translateX(-100%); }
             50% { transform: translateX(0); }
             100% { transform: translateX(100%); }
+        }
+
+        /* Scroll Down Animation */
+        @keyframes bounceSlow {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
+        }
+        .scroll-indicator-icon {
+            animation: bounceSlow 3s infinite;
         }
     </style>
 </head>
@@ -168,10 +178,19 @@
                 <div class="carousel-item"><div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-neutral-100"><img src="assets/images/work/mobility_hub_view2.png" loading="lazy" class="w-full h-full object-cover" onload="this.classList.add('loaded')"></div></div>
                 <div class="carousel-item"><div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-neutral-100"><img src="assets/images/work/sameer_residence.png" loading="lazy" class="w-full h-full object-cover" onload="this.classList.add('loaded')"></div></div>
             </div>
+
             <div class="absolute inset-0 flex items-center pointer-events-none z-20 px-6 md:px-12">
                 <h1 class="text-3xl md:text-[6.5rem] font-serif italic leading-[0.9] tracking-tightest text-white drop-shadow-2xl">Architecture & <br> Positive Distractions</h1>
             </div>
+
             <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent pointer-events-none z-10"></div>
+
+            <div class="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex-col items-center gap-2 pointer-events-none">
+                <span class="text-[8px] uppercase tracking-[0.6em] text-white/70 font-bold ml-[0.6em]">Scroll</span>
+                <div class="scroll-indicator-icon">
+                    <i class="fa-solid fa-chevron-down text-white/90 text-xs"></i>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -307,7 +326,7 @@
 </footer>
 
 <script>
-    // PRELOADER
+    // PRELOADER Logic
     window.addEventListener('load', () => {
         const preloader = document.getElementById('preloader');
         if (!sessionStorage.getItem('visited')) {
@@ -320,7 +339,7 @@
         }
     });
 
-    // Menu Toggle
+    // Mobile Menu Toggle
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const lines = [document.getElementById('line1'), document.getElementById('line2'), document.getElementById('line3')];
@@ -334,7 +353,7 @@
         lines[2].classList.toggle('-rotate-45'); lines[2].classList.toggle('-translate-y-[7px]');
     });
 
-    // Automatic Carousel
+    // Automatic Hero Carousel
     const carousel = document.getElementById('project-carousel');
     const items = document.querySelectorAll('.carousel-item');
     let currentSlide = 0;
@@ -348,7 +367,7 @@
             left: currentSlide * carousel.offsetWidth,
             behavior: 'smooth'
         });
-    }, 2500); // 2.5 seconds
+    }, 3500);
 </script>
 
 </body>
