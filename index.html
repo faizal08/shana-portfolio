@@ -45,7 +45,6 @@
             scroll-snap-align: start;
         }
 
-        /* Dot styling */
         .dot {
             transition: all 0.3s ease;
             width: 6px;
@@ -59,7 +58,7 @@
             transform: scale(1.3);
         }
 
-        /* Preloader Styles */
+        /* Preloader */
         #preloader {
             position: fixed;
             inset: 0;
@@ -71,19 +70,15 @@
             justify-content: center;
             transition: opacity 0.8s ease-in-out, visibility 0.8s;
         }
-
-        /* Globe Animation */
         .globe-icon {
             font-size: 3rem;
             color: #171717;
             animation: slowSpin 4s linear infinite;
         }
-
         @keyframes slowSpin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-
         .hidden-loader {
             opacity: 0;
             visibility: hidden;
@@ -150,36 +145,15 @@
     <section class="relative mt-8 md:mt-20 mb-20">
         <div class="relative group overflow-hidden">
             <div id="project-carousel" class="scrollbar-hide outline-none">
-                <div class="carousel-item">
-                    <div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-neutral-100">
-                        <img src="assets/images/work/home_page.png" alt="Featured Work" class="w-full h-full object-cover">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-neutral-100">
-                        <img src="assets/images/work/makbool_residence.png" alt="Makbool Residence" class="w-full h-full object-cover">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-neutral-100">
-                        <img src="assets/images/work/mobility_hub_view2.png" alt="Mobility Hub" class="w-full h-full object-cover">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-neutral-100">
-                        <img src="assets/images/work/sameer_residence.png" alt="Sameer Residence" class="w-full h-full object-cover">
-                    </div>
-                </div>
+                <div class="carousel-item"><div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-neutral-100"><img src="assets/images/work/home_page.png" class="w-full h-full object-cover"></div></div>
+                <div class="carousel-item"><div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-neutral-100"><img src="assets/images/work/makbool_residence.png" class="w-full h-full object-cover"></div></div>
+                <div class="carousel-item"><div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-neutral-100"><img src="assets/images/work/mobility_hub_view2.png" class="w-full h-full object-cover"></div></div>
+                <div class="carousel-item"><div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-neutral-100"><img src="assets/images/work/sameer_residence.png" class="w-full h-full object-cover"></div></div>
             </div>
-
             <div class="absolute inset-0 flex items-center pointer-events-none z-20 px-6 md:px-12">
-                <h1 class="text-3xl md:text-[6.5rem] font-serif italic leading-[0.9] tracking-tightest text-white drop-shadow-2xl">
-                    Architecture & <br> Positive Distractions
-                </h1>
+                <h1 class="text-3xl md:text-[6.5rem] font-serif italic leading-[0.9] tracking-tightest text-white drop-shadow-2xl">Architecture & <br> Positive Distractions</h1>
             </div>
-
             <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent pointer-events-none z-10"></div>
-
             <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-30">
                 <div onclick="goToSlide(0)" class="dot active" data-index="0"></div>
                 <div onclick="goToSlide(1)" class="dot" data-index="1"></div>
@@ -197,16 +171,20 @@
     </div>
 
     <div class="space-y-48 md:space-y-80 pb-40">
+
         <a href="projects/makbool-residence.html" class="group block">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-8 overflow-hidden aspect-[16/11] bg-neutral-100">
-                    <img src="assets/images/work/makbool_residence.png" alt="Makbool Residence"
-                         class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0">
+                    <img src="assets/images/work/makbool_residence.png" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0">
                 </div>
                 <div class="md:col-span-4 space-y-6">
                     <span class="text-[9px] uppercase tracking-editorial text-neutral-400 block">01 — Residential</span>
                     <h3 class="text-4xl md:text-5xl font-serif italic">Makbool <br>Residence</h3>
                     <p class="text-sm text-neutral-500 font-light leading-relaxed max-w-xs text-justify justify-fix">A home that celebrates its natural surroundings through clean lines and a neutral palette.</p>
+                    <div class="pt-4 flex items-center gap-3 group-hover:text-black text-neutral-400 transition-colors duration-300">
+                        <span class="text-[10px] uppercase tracking-[0.3em] font-medium">View Project</span>
+                        <i class="fa-solid fa-arrow-right-long text-xs transition-transform duration-500 group-hover:translate-x-2"></i>
+                    </div>
                 </div>
             </div>
         </a>
@@ -217,10 +195,13 @@
                     <span class="text-[9px] uppercase tracking-editorial text-neutral-400 block">02 — Academic</span>
                     <h3 class="text-4xl md:text-5xl font-serif italic">Ayurveda <br> Medical College</h3>
                     <p class="text-sm text-neutral-500 font-light leading-relaxed max-w-xs text-justify md:text-right justify-fix">A holistic approach to healing, integrating nature with clinical excellence.</p>
+                    <div class="pt-4 flex items-center gap-3 group-hover:text-black text-neutral-400 transition-colors duration-300">
+                        <span class="text-[10px] uppercase tracking-[0.3em] font-medium">View Project</span>
+                        <i class="fa-solid fa-arrow-right-long text-xs transition-transform duration-500 group-hover:translate-x-2"></i>
+                    </div>
                 </div>
                 <div class="md:col-span-8 md:order-2 order-1 overflow-hidden aspect-[16/11] bg-neutral-100">
-                    <img src="assets/images/work/ayurveda_medical_college.png" alt="Ayurveda College"
-                         class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0">
+                    <img src="assets/images/work/ayurveda_medical_college.png" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0">
                 </div>
             </div>
         </a>
@@ -228,13 +209,16 @@
         <a href="projects/sameer-residence.html" class="group block">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-8 overflow-hidden aspect-[16/11] bg-neutral-100">
-                    <img src="assets/images/work/sameer_residence.png" alt="Sameer Residence"
-                         class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0">
+                    <img src="assets/images/work/sameer_residence.png" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0">
                 </div>
                 <div class="md:col-span-4 space-y-6">
                     <span class="text-[9px] uppercase tracking-editorial text-neutral-400 block">03 — Residential</span>
                     <h3 class="text-4xl md:text-5xl font-serif italic">Sameer <br>Residence</h3>
                     <p class="text-sm text-neutral-500 font-light leading-relaxed max-w-xs text-justify justify-fix">Connecting indoors and outdoors with large windows and natural materials.</p>
+                    <div class="pt-4 flex items-center gap-3 group-hover:text-black text-neutral-400 transition-colors duration-300">
+                        <span class="text-[10px] uppercase tracking-[0.3em] font-medium">View Project</span>
+                        <i class="fa-solid fa-arrow-right-long text-xs transition-transform duration-500 group-hover:translate-x-2"></i>
+                    </div>
                 </div>
             </div>
         </a>
@@ -245,10 +229,13 @@
                     <span class="text-[9px] uppercase tracking-editorial text-neutral-400 block">04 — Urban</span>
                     <h3 class="text-4xl md:text-5xl font-serif italic">Calicut <br>Mobility Hub</h3>
                     <p class="text-sm text-neutral-500 font-light leading-relaxed max-w-xs text-justify md:text-right justify-fix">Reimagining transit infrastructure as a seamless, public-centered experience.</p>
+                    <div class="pt-4 flex items-center gap-3 group-hover:text-black text-neutral-400 transition-colors duration-300">
+                        <span class="text-[10px] uppercase tracking-[0.3em] font-medium">View Project</span>
+                        <i class="fa-solid fa-arrow-right-long text-xs transition-transform duration-500 group-hover:translate-x-2"></i>
+                    </div>
                 </div>
                 <div class="md:col-span-8 md:order-2 order-1 overflow-hidden aspect-[16/11] bg-neutral-100">
-                    <img src="assets/images/work/mobility_hub.png" alt="Mobility Hub"
-                         class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0">
+                    <img src="assets/images/work/mobility_hub.png" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0">
                 </div>
             </div>
         </a>
@@ -264,72 +251,54 @@
                 <p class="text-[10px] tracking-editorial text-neutral-400 uppercase hidden md:block">Kerala, India</p>
             </div>
             <div class="flex items-center gap-10 order-1 md:order-2">
-                <a href="https://www.instagram.com/shana_rahmath/" target="_blank" class="text-neutral-300 hover:text-black transition-colors duration-500">
-                    <i class="fa-brands fa-instagram text-lg"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/shana-rahmath/" target="_blank" class="text-neutral-300 hover:text-black transition-colors duration-500">
-                    <i class="fa-brands fa-linkedin-in text-lg"></i>
-                </a>
+                <a href="https://www.instagram.com/shana_rahmath/" target="_blank" class="text-neutral-300 hover:text-black transition duration-500"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="https://www.linkedin.com/in/shana-rahmath/" target="_blank" class="text-neutral-300 hover:text-black transition duration-500"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
             </div>
         </div>
     </div>
 </footer>
 
 <script>
-    // PRELOADER LOGIC
+    // PRELOADER
     window.addEventListener('load', () => {
         const preloader = document.getElementById('preloader');
         if (!sessionStorage.getItem('visited')) {
             setTimeout(() => {
                 preloader.classList.add('hidden-loader');
                 sessionStorage.setItem('visited', 'true');
-            }, 2500); // 2.5s to let the globe spin and line animate
+            }, 2500);
         } else {
             preloader.style.display = 'none';
         }
     });
 
-    // Navigation Menu Toggle
+    // Menu Toggle
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const line1 = document.getElementById('line1');
-    const line2 = document.getElementById('line2');
-    const line3 = document.getElementById('line3');
+    const lines = [document.getElementById('line1'), document.getElementById('line2'), document.getElementById('line3')];
 
     menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('opacity-0');
         mobileMenu.classList.toggle('pointer-events-none');
         mobileMenu.classList.toggle('translate-y-0');
-        mobileMenu.classList.toggle('translate-y-[-10px]');
-        line1.classList.toggle('rotate-45');
-        line1.classList.toggle('translate-y-[7px]');
-        line2.classList.toggle('opacity-0');
-        line3.classList.toggle('-rotate-45');
-        line3.classList.toggle('-translate-y-[7px]');
+        lines[0].classList.toggle('rotate-45'); lines[0].classList.toggle('translate-y-[7px]');
+        lines[1].classList.toggle('opacity-0');
+        lines[2].classList.toggle('-rotate-45'); lines[2].classList.toggle('-translate-y-[7px]');
     });
 
-    // Carousel Logic
+    // Carousel
     const carousel = document.getElementById('project-carousel');
     const dots = document.querySelectorAll('.dot');
-
     carousel.addEventListener('scroll', () => {
         const index = Math.round(carousel.scrollLeft / carousel.offsetWidth);
-        dots.forEach((dot, i) => {
-            if (i === index) dot.classList.add('active');
-            else dot.classList.remove('active');
-        });
+        dots.forEach((dot, i) => i === index ? dot.classList.add('active') : dot.classList.remove('active'));
     });
-
     function goToSlide(index) {
-        carousel.scrollTo({
-            left: index * carousel.offsetWidth,
-            behavior: 'smooth'
-        });
+        carousel.scrollTo({ left: index * carousel.offsetWidth, behavior: 'smooth' });
     }
 </script>
 
 <style>
-    /* Custom keyframe for the loading bar inside the preloader */
     @keyframes loadingLine {
         0% { transform: translateX(-100%); }
         50% { transform: translateX(0); }
