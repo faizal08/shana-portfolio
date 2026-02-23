@@ -21,32 +21,66 @@
 <body class="bg-white text-neutral-900 font-sans antialiased">
 
 <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-100">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 py-8 md:py-10 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 md:py-10 flex justify-between items-center">
 
-        <a href="../index.html" class="flex items-center group">
+        <a href="../index.html" class="flex items-center group z-50">
             <div class="relative flex items-center">
-                <div class="w-12 h-12 bg-neutral-900 flex items-center justify-center transition-all duration-500 group-hover:bg-neutral-800">
-                    <span class="text-white text-xl font-light tracking-tighter">S</span>
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-neutral-900 flex items-center justify-center transition-all duration-500 group-hover:bg-neutral-800">
+                    <span class="text-white text-lg md:text-xl font-light tracking-tighter">S</span>
                 </div>
-                <div class="ml-4 flex flex-col justify-center">
+                <div class="ml-3 md:ml-4 flex flex-col justify-center">
                     <div class="flex items-center gap-2">
-                        <span class="text-[9px] font-medium tracking-[0.5em] uppercase text-neutral-400">Ar.</span>
-                        <div class="h-[1px] w-8 bg-neutral-200"></div>
+                        <span class="text-[8px] md:text-[9px] font-medium tracking-[0.4em] md:tracking-[0.5em] uppercase text-neutral-400">Ar.</span>
+                        <div class="h-[1px] w-6 md:w-8 bg-neutral-200"></div>
                     </div>
-                    <span class="text-xl font-medium tracking-[0.15em] uppercase text-neutral-900">
+                    <span class="text-lg md:text-xl font-medium tracking-[0.12em] md:tracking-[0.15em] uppercase text-neutral-900">
                         Shana <span class="font-light text-neutral-500">Rahmath</span>
                     </span>
                 </div>
             </div>
         </a>
 
-        <div class="flex space-x-8 uppercase text-[10px] tracking-[0.3em] text-neutral-400">
-            <a href="../index.html" class="hover:text-black transition duration-300">Work</a>
-            <a href="../about.html" class="hover:text-black transition duration-300">About</a>
-            <a href="../contact.html" class="hover:text-black transition duration-300">Contact</a>
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 p-2" aria-label="Menu">
+            <span id="line1" class="w-6 h-px bg-black transition-all duration-300"></span>
+            <span id="line2" class="w-6 h-px bg-black transition-all duration-300"></span>
+        </button>
+
+        <div id="nav-menu" class="fixed md:relative inset-0 md:inset-auto bg-white md:bg-transparent
+            flex flex-col md:flex-row items-center justify-center md:justify-end
+            gap-12 md:gap-8 uppercase text-[12px] md:text-[10px] tracking-[0.4em] md:tracking-widest
+            transition-all duration-500 ease-in-out
+            opacity-0 pointer-events-none md:opacity-100 md:pointer-events-auto
+            translate-y-4 md:translate-y-0">
+
+            <a href="../index.html" class="text-neutral-400 hover:text-black transition duration-300">Work</a>
+            <a href="../about.html" class="text-neutral-400 hover:text-black transition duration-300">About</a>
+            <a href="../contact.html" class="text-neutral-400 hover:text-black transition duration-300">Contact</a>
         </div>
     </div>
 </nav>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
+
+    menuBtn.addEventListener('click', () => {
+        // Toggle Menu Overlay
+        navMenu.classList.toggle('opacity-0');
+        navMenu.classList.toggle('pointer-events-none');
+        navMenu.classList.toggle('translate-y-4');
+
+        // Hamburger to X animation
+        line1.classList.toggle('rotate-45');
+        line1.classList.toggle('translate-y-1');
+        line2.classList.toggle('-rotate-45');
+        line2.classList.toggle('-translate-y-1');
+
+        // Prevent background scrolling when menu is open
+        document.body.classList.toggle('overflow-hidden');
+    });
+</script>
 <main class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20">
     <div class="mb-12">
         <h1 class="text-3xl md:text-5xl font-light mb-4 text-neutral-900">Ayurveda Medical College</h1>
