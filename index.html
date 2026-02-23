@@ -31,7 +31,6 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .justify-fix { text-justify: inter-word; hyphens: auto; }
-
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
@@ -59,10 +58,53 @@
             background-color: white;
             transform: scale(1.3);
         }
+
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #FCFCFC;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease-in-out, visibility 0.8s;
+        }
+
+        /* Globe Animation */
+        .globe-icon {
+            font-size: 3rem;
+            color: #171717;
+            animation: slowSpin 4s linear infinite;
+        }
+
+        @keyframes slowSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hidden-loader {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
     </style>
 </head>
 
 <body class="bg-[#FCFCFC] text-neutral-900 font-sans antialiased">
+
+<div id="preloader">
+    <div class="mb-8">
+        <i class="fa-solid fa-earth-americas globe-icon"></i>
+    </div>
+    <div class="flex flex-col items-center gap-4">
+        <span class="text-[11px] uppercase tracking-[0.8em] text-neutral-800 font-medium ml-[0.8em]">Loading...</span>
+        <div class="w-24 h-[1px] bg-neutral-200 relative overflow-hidden">
+            <div class="absolute inset-0 bg-black translate-x-[-100%] animate-[loadingLine_2s_infinite_ease-in-out]"></div>
+        </div>
+    </div>
+</div>
 
 <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-100">
     <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 md:py-10 flex justify-between items-center relative z-[70]">
@@ -234,6 +276,19 @@
 </footer>
 
 <script>
+    // PRELOADER LOGIC
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        if (!sessionStorage.getItem('visited')) {
+            setTimeout(() => {
+                preloader.classList.add('hidden-loader');
+                sessionStorage.setItem('visited', 'true');
+            }, 2500); // 2.5s to let the globe spin and line animate
+        } else {
+            preloader.style.display = 'none';
+        }
+    });
+
     // Navigation Menu Toggle
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -257,7 +312,6 @@
     const carousel = document.getElementById('project-carousel');
     const dots = document.querySelectorAll('.dot');
 
-    // Update active dot on scroll
     carousel.addEventListener('scroll', () => {
         const index = Math.round(carousel.scrollLeft / carousel.offsetWidth);
         dots.forEach((dot, i) => {
@@ -266,7 +320,6 @@
         });
     });
 
-    // Click to go to slide
     function goToSlide(index) {
         carousel.scrollTo({
             left: index * carousel.offsetWidth,
@@ -274,6 +327,15 @@
         });
     }
 </script>
+
+<style>
+    /* Custom keyframe for the loading bar inside the preloader */
+    @keyframes loadingLine {
+        0% { transform: translateX(-100%); }
+        50% { transform: translateX(0); }
+        100% { transform: translateX(100%); }
+    }
+</style>
 
 </body>
 </html>
