@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobility Hub Calicut | Ar. Shana Rahmath</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
         tailwind.config = {
@@ -31,7 +35,7 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .justify-fix { text-justify: inter-word; hyphens: auto; }
 
-        /* ZAHA HADID STYLE FIXED BACKGROUND */
+        /* FIXED BACKGROUND */
         .fixed-bg {
             position: fixed;
             top: 0;
@@ -48,7 +52,7 @@
 
         /* Progress Bar Animation */
         #progressBar {
-            transition: width 5000ms linear;
+            transition-timing-function: linear;
         }
     </style>
 </head>
@@ -104,7 +108,7 @@
     </div>
 
     <div class="mb-16">
-        <h1 class="text-4xl md:text-7xl font-serif italic leading-tight tracking-tightest text-neutral-900 mb-6 whitespace-nowrap overflow-hidden text-ellipsis">
+        <h1 class="text-4xl md:text-7xl font-serif italic leading-tight tracking-tightest text-neutral-900 mb-6">
             Mobility Hub, Calicut
         </h1>
         <div class="flex items-center gap-4">
@@ -230,7 +234,6 @@
 </footer>
 
 <script>
-    // Navigation Logic
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const lines = [document.getElementById('line1'), document.getElementById('line2'), document.getElementById('line3')];
@@ -244,18 +247,27 @@
         lines[2].classList.toggle('-rotate-45'); lines[2].classList.toggle('-translate-y-[7px]');
     });
 
-    // Purely Automatic Slider Logic
+    // Slider Logic
     const images = [
         "../assets/images/work/mobility_hub.png",
         "../assets/images/work/mobility_hub_view2.png"
     ];
 
     let currentIndex = 0;
-    const intervalTime = 2500; // 2.5 seconds
+    const intervalTime = 3000;
 
     const imgElement = document.getElementById('projectImage');
     const numElement = document.getElementById('imageNum');
     const progressBar = document.getElementById('progressBar');
+
+    function resetProgressBar() {
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0%';
+        setTimeout(() => {
+            progressBar.style.transition = `width ${intervalTime}ms linear`;
+            progressBar.style.width = '100%';
+        }, 50);
+    }
 
     function changeImage() {
         currentIndex++;
@@ -270,22 +282,10 @@
         }, 300);
     }
 
-    function resetProgressBar() {
-        progressBar.style.transition = 'none';
-        progressBar.style.width = '0%';
-        setTimeout(() => {
-            progressBar.style.transition = `width ${intervalTime}ms linear`;
-            progressBar.style.width = '100%';
-        }, 50);
-    }
-
-    function startAutoPlay() {
+    window.onload = () => {
         setInterval(changeImage, intervalTime);
         resetProgressBar();
-    }
-
-    // Start on load
-    window.onload = startAutoPlay;
+    };
 </script>
 
 </body>
