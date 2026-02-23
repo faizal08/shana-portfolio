@@ -4,45 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobility Hub Calicut | Ar. Shana Rahmath</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
                     },
+                    letterSpacing: {
+                        'editorial': '.5em',
+                        'tightest': '-.05em',
+                    }
                 }
             }
         }
     </script>
+
     <style>
+        body { animation: fadeIn 1.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .justify-fix { text-justify: inter-word; hyphens: auto; }
+
         .slider-btn {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(4px);
             transition: all 0.3s ease;
         }
-        /* Show arrows by default (Mobile) */
-        .slider-btn {
-            opacity: 1;
-        }
-        /* On Desktop hide them and show only on hover */
         @media (min-width: 768px) {
-            .slider-btn {
-                opacity: 0;
-            }
-            .group:hover .slider-btn {
-                opacity: 1;
-            }
+            .slider-btn { opacity: 0; }
+            .group:hover .slider-btn { opacity: 1; }
         }
     </style>
 </head>
-<body class="bg-white text-neutral-900 font-sans antialiased">
 
-<nav class="sticky top-0 z-50 bg-white border-b border-neutral-100">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 md:py-10 flex justify-between items-center relative bg-white z-[70]">
+<body class="bg-[#FCFCFC] text-neutral-900 font-sans antialiased">
 
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-100">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 md:py-10 flex justify-between items-center relative z-[70]">
         <a href="../index.html" class="flex items-center group">
             <div class="relative flex items-center">
                 <div class="w-10 h-10 md:w-12 md:h-12 bg-neutral-900 flex items-center justify-center transition-all duration-500 group-hover:bg-neutral-800">
@@ -66,57 +70,62 @@
             <span id="line3" class="w-6 h-px bg-black transition-all duration-300"></span>
         </button>
 
-        <div class="hidden md:flex items-center gap-8 uppercase text-[10px] tracking-widest">
-            <a href="../index.html" class="text-neutral-400 hover:text-black transition duration-300">Projects</a>
-            <a href="../about.html" class="text-neutral-400 hover:text-black transition duration-300">About</a>
-            <a href="../contact.html" class="text-neutral-400 hover:text-black transition duration-300">Contact</a>
+        <div class="hidden md:flex items-center gap-12 uppercase text-[9px] tracking-editorial">
+            <a href="../index.html" class="text-black font-medium border-b border-black/20 pb-1">Projects</a>
+            <a href="../about.html" class="text-neutral-400 hover:text-black transition duration-500">About</a>
+            <a href="../contact.html" class="text-neutral-400 hover:text-black transition duration-500">Contact</a>
         </div>
     </div>
 
     <div id="mobile-menu" class="absolute inset-x-0 top-full bg-white border-b border-neutral-100 z-[60] flex flex-col items-center py-12 gap-8 md:hidden transition-all duration-500 ease-in-out opacity-0 pointer-events-none translate-y-[-10px]">
-        <a href="../index.html" class="text-sm uppercase tracking-[0.4em] text-neutral-400 hover:text-black transition">Projects</a>
+        <a href="../index.html" class="text-sm uppercase tracking-[0.4em] text-black font-medium">Projects</a>
         <a href="../about.html" class="text-sm uppercase tracking-[0.4em] text-neutral-400 hover:text-black transition">About</a>
         <a href="../contact.html" class="text-sm uppercase tracking-[0.4em] text-neutral-400 hover:text-black transition">Contact</a>
     </div>
 </nav>
 
-<main class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20">
-    <div class="mb-8">
-        <a href="../index.html" class="text-[10px] uppercase tracking-[0.3em] text-neutral-400 hover:text-black transition flex items-center gap-2">
-            <span class="text-lg">←</span> Back to Projects
+<main class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-24">
+    <div class="mb-12">
+        <a href="../index.html" class="text-[9px] uppercase tracking-editorial text-neutral-400 hover:text-black transition-all flex items-center gap-4">
+            <span class="text-xl">←</span> Back to Projects
         </a>
     </div>
 
-    <div class="mb-12">
-        <h1 class="text-3xl md:text-5xl font-light mb-4 text-neutral-900">Mobility Hub, Calicut</h1>
-        <p class="text-[10px] uppercase tracking-[0.3em] text-neutral-400">Urban Infrastructure | Transit Oriented Development</p>
+    <div class="mb-16">
+        <h1 class="text-4xl md:text-6xl font-serif italic leading-tight tracking-tightest text-neutral-900 mb-6 whitespace-nowrap overflow-hidden text-ellipsis">
+            Mobility Hub, Calicut
+        </h1>
+        <div class="flex items-center gap-4">
+            <div class="h-px w-8 bg-neutral-200"></div>
+            <p class="uppercase tracking-editorial text-[9px] text-neutral-400">Urban Infrastructure | Transit Oriented Development</p>
+        </div>
     </div>
 
-    <div class="relative group aspect-[16/9] overflow-hidden bg-neutral-100 mb-16">
+    <div class="relative group aspect-[16/9] overflow-hidden bg-neutral-100 mb-20 shadow-sm">
         <img id="projectImage"
              src="../assets/images/work/mobility_hub.png"
              alt="Calicut Mobility Hub Design"
              class="w-full h-full object-cover transition-opacity duration-500">
 
-        <button onclick="changeImage(-1)" class="slider-btn absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md z-10">
+        <button onclick="changeImage(-1)" class="slider-btn absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md z-10 text-neutral-900 hover:bg-black hover:text-white">
             <span class="text-xl">←</span>
         </button>
-        <button onclick="changeImage(1)" class="slider-btn absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md z-10">
+        <button onclick="changeImage(1)" class="slider-btn absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md z-10 text-neutral-900 hover:bg-black hover:text-white">
             <span class="text-xl">→</span>
         </button>
 
-        <div class="absolute bottom-4 right-6 text-[10px] uppercase tracking-widest bg-white/80 px-3 py-1 rounded-full z-10">
+        <div class="absolute bottom-4 right-6 text-[9px] uppercase tracking-editorial bg-white/90 backdrop-blur-sm px-4 py-2 z-10">
             <span id="imageNum">1</span> / 2
         </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
         <div class="md:col-span-8 space-y-12">
             <section>
-                <h2 class="text-[10px] uppercase tracking-[0.3em] text-neutral-400 mb-6 border-b border-neutral-100 pb-2">About the Project</h2>
-                <div class="space-y-6 text-lg text-neutral-600 leading-relaxed text-justify">
+                <h4 class="text-[9px] uppercase tracking-editorial text-neutral-400 mb-8 border-b border-neutral-100 pb-2">Narrative</h4>
+                <div class="space-y-8 text-lg text-neutral-500 font-light leading-relaxed text-justify justify-fix">
                     <p>
-                        Calicut Mobility Hub is a Transit-Oriented Development designed as a solution for existing transportation challenges. Through the redevelopment and reimagining of transit infrastructure, the project aims to create a transport-friendly and convenient hub for the public.
+                        Calicut Mobility Hub is a Transit-Oriented Development designed as a solution for existing transportation challenges. Through the redevelopment and reimagining of transit infrastructure, the project aims to create a <span class="text-neutral-900 italic font-serif text-xl">transport-friendly environment</span> that prioritizes public convenience.
                     </p>
                     <p>
                         The design creates a comfortable traveling experience by seamlessly linking different modes of transport—including monorail, buses, auto-taxis, and bicycles. This integration enables safe, secure movement and improves overall accessibility throughout the city.
@@ -125,40 +134,56 @@
             </section>
         </div>
 
-        <div class="md:col-span-4 space-y-8">
-            <div class="bg-neutral-50 p-8 border border-neutral-100">
-                <h2 class="text-[10px] uppercase tracking-[0.3em] text-neutral-400 mb-6 border-b border-neutral-200 pb-2">Project Details</h2>
-                <div class="space-y-4 text-sm">
+        <div class="md:col-span-4">
+            <div class="bg-white p-10 border border-neutral-100 sticky top-32">
+                <h4 class="text-[9px] uppercase tracking-editorial text-neutral-400 mb-8 border-b border-neutral-100 pb-2">Specifications</h4>
+                <div class="space-y-6">
                     <div>
-                        <span class="block text-[10px] uppercase text-neutral-400">Location</span>
-                        <span class="font-medium">Malaparamba, Calicut, Kerala</span>
+                        <span class="block text-[8px] uppercase tracking-widest text-neutral-300 mb-1">Location</span>
+                        <span class="text-sm font-medium uppercase tracking-wider">Malaparamba, Calicut</span>
                     </div>
                     <div>
-                        <span class="block text-[10px] uppercase text-neutral-400">Category</span>
-                        <span class="font-medium">Architectural Design Project (S9)</span>
+                        <span class="block text-[8px] uppercase tracking-widest text-neutral-300 mb-1">Category</span>
+                        <span class="text-sm font-medium uppercase tracking-wider">Academic Design (S9)</span>
                     </div>
                     <div>
-                        <span class="block text-[10px] uppercase text-neutral-400">Focus</span>
-                        <span class="font-medium">Transit Integration & Safety</span>
+                        <span class="block text-[8px] uppercase tracking-widest text-neutral-300 mb-1">Focus</span>
+                        <span class="text-sm font-medium uppercase tracking-wider italic">Transit Integration</span>
                     </div>
                     <div>
-                        <span class="block text-[10px] uppercase text-neutral-400">Status</span>
-                        <span class="font-medium">Conceptual Design</span>
+                        <span class="block text-[8px] uppercase tracking-widest text-neutral-300 mb-1">Status</span>
+                        <span class="text-sm font-medium uppercase tracking-wider">Conceptual Design</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="pb-20">
-        <a href="../index.html" class="inline-block bg-black text-white px-10 py-5 text-[10px] uppercase tracking-[0.3em] font-medium border border-black hover:bg-white hover:text-black transition-all duration-300">
-            View Other Projects
+    <div class="pb-20 border-t border-neutral-100 pt-20">
+        <a href="../index.html" class="inline-block bg-neutral-900 text-white px-12 py-5 text-[9px] uppercase tracking-editorial font-medium hover:bg-white hover:text-neutral-900 border border-neutral-900 transition-all duration-500">
+            View All Projects
         </a>
     </div>
 </main>
 
-<footer class="border-t border-neutral-100 py-12 text-center">
-    <p class="text-[10px] tracking-[0.3em] text-neutral-300 uppercase italic">© 2026 Ar. Shana Rahmath</p>
+<footer class="border-t border-neutral-100 py-12 bg-[#FCFCFC]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4 order-2 md:order-1">
+                <p class="text-[10px] tracking-editorial text-neutral-400 uppercase">© 2026 Shana Rahmath</p>
+                <div class="h-4 w-[1px] bg-neutral-200 hidden md:block"></div>
+                <p class="text-[10px] tracking-editorial text-neutral-400 uppercase hidden md:block">Kerala, India</p>
+            </div>
+            <div class="flex items-center gap-10 order-1 md:order-2">
+                <a href="https://www.instagram.com/shana_rahmath/" target="_blank" class="text-neutral-300 hover:text-black transition-colors duration-500">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/shana-rahmath/" target="_blank" class="text-neutral-300 hover:text-black transition-colors duration-500">
+                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 </footer>
 
 <script>
