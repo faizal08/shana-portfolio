@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayurveda Medical College | Ar. Shana Rahmath</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -20,10 +20,9 @@
 </head>
 <body class="bg-white text-neutral-900 font-sans antialiased">
 
-<nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-100">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 md:py-10 flex justify-between items-center">
-
-        <a href="../index.html" class="flex items-center group z-50">
+<nav class="sticky top-0 z-50 bg-white border-b border-neutral-100">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 md:py-10 flex justify-between items-center relative bg-white z-[70]">
+        <a href="../index.html" class="flex items-center group">
             <div class="relative flex items-center">
                 <div class="w-10 h-10 md:w-12 md:h-12 bg-neutral-900 flex items-center justify-center transition-all duration-500 group-hover:bg-neutral-800">
                     <span class="text-white text-lg md:text-xl font-light tracking-tighter">S</span>
@@ -40,48 +39,33 @@
             </div>
         </a>
 
-        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 p-2" aria-label="Menu">
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none" aria-label="Menu">
             <span id="line1" class="w-6 h-px bg-black transition-all duration-300"></span>
             <span id="line2" class="w-6 h-px bg-black transition-all duration-300"></span>
+            <span id="line3" class="w-6 h-px bg-black transition-all duration-300"></span>
         </button>
 
-        <div id="nav-menu" class="fixed md:relative inset-0 md:inset-auto bg-white md:bg-transparent
-            flex flex-col md:flex-row items-center justify-center md:justify-end
-            gap-12 md:gap-8 uppercase text-[12px] md:text-[10px] tracking-[0.4em] md:tracking-widest
-            transition-all duration-500 ease-in-out
-            opacity-0 pointer-events-none md:opacity-100 md:pointer-events-auto
-            translate-y-4 md:translate-y-0">
-
-            <a href="../index.html" class="text-neutral-400 hover:text-black transition duration-300">Work</a>
+        <div class="hidden md:flex items-center gap-8 uppercase text-[10px] tracking-widest">
+            <a href="../index.html" class="text-neutral-400 hover:text-black transition duration-300">Projects</a>
             <a href="../about.html" class="text-neutral-400 hover:text-black transition duration-300">About</a>
             <a href="../contact.html" class="text-neutral-400 hover:text-black transition duration-300">Contact</a>
         </div>
     </div>
+
+    <div id="mobile-menu" class="absolute inset-x-0 top-full bg-white border-b border-neutral-100 z-[60] flex flex-col items-center py-12 gap-8 md:hidden transition-all duration-500 ease-in-out opacity-0 pointer-events-none translate-y-[-10px]">
+        <a href="../index.html" class="text-sm uppercase tracking-[0.4em] text-neutral-400 hover:text-black transition">Projects</a>
+        <a href="../about.html" class="text-sm uppercase tracking-[0.4em] text-neutral-400 hover:text-black transition">About</a>
+        <a href="../contact.html" class="text-sm uppercase tracking-[0.4em] text-neutral-400 hover:text-black transition">Contact</a>
+    </div>
 </nav>
 
-<script>
-    const menuBtn = document.getElementById('menu-btn');
-    const navMenu = document.getElementById('nav-menu');
-    const line1 = document.getElementById('line1');
-    const line2 = document.getElementById('line2');
-
-    menuBtn.addEventListener('click', () => {
-        // Toggle Menu Overlay
-        navMenu.classList.toggle('opacity-0');
-        navMenu.classList.toggle('pointer-events-none');
-        navMenu.classList.toggle('translate-y-4');
-
-        // Hamburger to X animation
-        line1.classList.toggle('rotate-45');
-        line1.classList.toggle('translate-y-1');
-        line2.classList.toggle('-rotate-45');
-        line2.classList.toggle('-translate-y-1');
-
-        // Prevent background scrolling when menu is open
-        document.body.classList.toggle('overflow-hidden');
-    });
-</script>
 <main class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20">
+    <div class="mb-8">
+        <a href="../index.html" class="text-[10px] uppercase tracking-[0.3em] text-neutral-400 hover:text-black transition flex items-center gap-2">
+            <span class="text-lg">←</span> Back to Projects
+        </a>
+    </div>
+
     <div class="mb-12">
         <h1 class="text-3xl md:text-5xl font-light mb-4 text-neutral-900">Ayurveda Medical College</h1>
         <p class="text-[10px] uppercase tracking-[0.3em] text-neutral-400">Architectural Thesis Project | Calicut | 19 Acres</p>
@@ -93,7 +77,7 @@
              class="w-full h-full object-cover">
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
         <div class="md:col-span-8 space-y-12">
             <section>
                 <h2 class="text-[10px] uppercase tracking-[0.3em] text-neutral-400 mb-6 border-b border-neutral-100 pb-2">About the Project</h2>
@@ -132,11 +116,37 @@
             </div>
         </div>
     </div>
+
+    <div class="pb-20">
+        <a href="../index.html" class="inline-block bg-black text-white px-10 py-5 text-[10px] uppercase tracking-[0.3em] font-medium border border-black hover:bg-white hover:text-black transition-all duration-300">
+            View Other Projects
+        </a>
+    </div>
 </main>
 
 <footer class="border-t border-neutral-100 py-12 text-center">
     <p class="text-[10px] tracking-[0.3em] text-neutral-300 uppercase italic">© 2026 Ar. Shana Rahmath</p>
 </footer>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
+    const line3 = document.getElementById('line3');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('opacity-0');
+        mobileMenu.classList.toggle('pointer-events-none');
+        mobileMenu.classList.toggle('translate-y-0');
+        mobileMenu.classList.toggle('translate-y-[-10px]');
+        line1.classList.toggle('rotate-45');
+        line1.classList.toggle('translate-y-[7px]');
+        line2.classList.toggle('opacity-0');
+        line3.classList.toggle('-rotate-45');
+        line3.classList.toggle('-translate-y-[7px]');
+    });
+</script>
 
 </body>
 </html>
