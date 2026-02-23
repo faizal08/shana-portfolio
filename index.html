@@ -15,7 +15,7 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        serif: ['Cormorant Garamond', 'serif'],
+                        serif: ['Cormorant Gramond', 'serif'],
                     },
                     letterSpacing: {
                         'editorial': '.5em',
@@ -34,6 +34,21 @@
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
+        /* ZAHA HADID STYLE FIXED BACKGROUND */
+        .fixed-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('assets/images/work/mobility_hub_view2.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: grayscale(100%) brightness(0.9) opacity(0.12); /* Subtle architectural watermark */
+        }
+
         #project-carousel {
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
@@ -46,7 +61,6 @@
             scroll-snap-align: start;
         }
 
-        /* Smooth reveal for lazy loaded images */
         img {
             opacity: 0;
             transition: opacity 1s ease-in-out;
@@ -91,6 +105,8 @@
 
 <body class="bg-[#FCFCFC] text-neutral-900 font-sans antialiased">
 
+<div class="fixed-bg"></div>
+
 <div id="preloader">
     <div class="mb-8">
         <i class="fa-solid fa-earth-americas globe-icon"></i>
@@ -112,11 +128,11 @@
                 </div>
                 <div class="ml-3 md:ml-4 flex flex-col justify-center">
                     <div class="flex items-center gap-2">
-                        <span class="text-[8px] md:text-[9px] font-medium tracking-[0.4em] md:tracking-[0.5em] uppercase text-neutral-400">Ar.</span>
-                        <div class="h-[1px] w-6 md:w-8 bg-neutral-200"></div>
+                        <span class="text-[8px] md:text-[9px] font-bold tracking-[0.4em] md:tracking-[0.5em] uppercase text-neutral-500">Ar.</span>
+                        <div class="h-[1px] w-6 md:w-8 bg-neutral-300"></div>
                     </div>
-                    <span class="text-lg md:text-xl font-medium tracking-[0.12em] md:tracking-[0.15em] uppercase text-neutral-900">
-                        Shana <span class="font-light text-neutral-500">Rahmath</span>
+                    <span class="text-lg md:text-xl font-bold tracking-[0.12em] md:tracking-[0.15em] uppercase text-neutral-900">
+                        Shana <span class="font-light text-neutral-600">Rahmath</span>
                     </span>
                 </div>
             </div>
@@ -128,24 +144,24 @@
             <span id="line3" class="w-6 h-px bg-black transition-all duration-300"></span>
         </button>
 
-        <div class="hidden md:flex items-center gap-12 uppercase text-[9px] tracking-editorial">
-            <a href="index.html" class="text-black font-medium border-b border-black/20 pb-1">Projects</a>
-            <a href="about.html" class="text-neutral-400 hover:text-black transition duration-500">About</a>
-            <a href="contact.html" class="text-neutral-400 hover:text-black transition duration-500">Contact</a>
+        <div class="hidden md:flex items-center gap-12 uppercase text-[10px] tracking-editorial font-bold">
+            <a href="index.html" class="text-black border-b-2 border-black pb-1">Projects</a>
+            <a href="about.html" class="text-neutral-500 hover:text-black transition duration-500">About</a>
+            <a href="contact.html" class="text-neutral-500 hover:text-black transition duration-500">Contact</a>
         </div>
     </div>
 
     <div id="mobile-menu" class="absolute inset-x-0 top-full bg-white border-b border-neutral-100 z-[60] flex flex-col items-center py-12 gap-8 md:hidden transition-all duration-500 ease-in-out opacity-0 pointer-events-none translate-y-[-10px]">
-        <a href="index.html" class="text-sm uppercase tracking-[0.4em] text-black font-medium">Projects</a>
-        <a href="about.html" class="text-sm uppercase tracking-[0.4em] text-neutral-400 hover:text-black transition">About</a>
-        <a href="contact.html" class="text-sm uppercase tracking-[0.4em] text-neutral-400 hover:text-black transition">Contact</a>
+        <a href="index.html" class="text-sm uppercase tracking-[0.4em] text-black font-bold">Projects</a>
+        <a href="about.html" class="text-sm uppercase tracking-[0.4em] text-neutral-500 hover:text-black transition">About</a>
+        <a href="contact.html" class="text-sm uppercase tracking-[0.4em] text-neutral-500 hover:text-black transition">Contact</a>
     </div>
 </nav>
 
-<main class="max-w-7xl mx-auto px-6 md:px-12">
+<main class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 bg-white/40 backdrop-blur-[2px]">
 
     <section class="relative mt-8 md:mt-20 mb-20">
-        <div class="relative group overflow-hidden">
+        <div class="relative group overflow-hidden shadow-2xl">
             <div id="project-carousel" class="scrollbar-hide outline-none">
                 <div class="carousel-item"><div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-neutral-100"><img src="assets/images/work/home_page.png" loading="lazy" class="w-full h-full object-cover" onload="this.classList.add('loaded')"></div></div>
                 <div class="carousel-item"><div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-neutral-100"><img src="assets/images/work/makbool_residence.png" loading="lazy" class="w-full h-full object-cover" onload="this.classList.add('loaded')"></div></div>
@@ -155,14 +171,14 @@
             <div class="absolute inset-0 flex items-center pointer-events-none z-20 px-6 md:px-12">
                 <h1 class="text-3xl md:text-[6.5rem] font-serif italic leading-[0.9] tracking-tightest text-white drop-shadow-2xl">Architecture & <br> Positive Distractions</h1>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent pointer-events-none z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent pointer-events-none z-10"></div>
         </div>
     </section>
 
     <div class="space-y-12 mb-16 md:mb-24">
         <div class="flex items-center gap-4">
-            <div class="h-px w-12 bg-neutral-200"></div>
-            <p class="uppercase tracking-editorial text-[9px] text-neutral-400">Selected Works — <span class="font-serif italic capitalize">2026</span></p>
+            <div class="h-px w-12 bg-neutral-400"></div>
+            <p class="uppercase tracking-editorial text-[10px] text-neutral-600 font-bold">Selected Works — <span class="font-serif italic capitalize">2026</span></p>
         </div>
     </div>
 
@@ -170,15 +186,15 @@
 
         <a href="projects/makbool-residence.html" class="group block">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-                <div class="md:col-span-8 overflow-hidden aspect-[16/11] bg-neutral-100">
-                    <img src="assets/images/work/makbool_residence.png" loading="lazy" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0" onload="this.classList.add('loaded')">
+                <div class="md:col-span-8 overflow-hidden aspect-[16/11] bg-white shadow-xl">
+                    <img src="assets/images/work/makbool_residence.png" loading="lazy" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[20%] group-hover:grayscale-0" onload="this.classList.add('loaded')">
                 </div>
                 <div class="md:col-span-4 space-y-6">
-                    <span class="text-[9px] uppercase tracking-editorial text-neutral-400 block">01 — Residential</span>
-                    <h3 class="text-4xl md:text-5xl font-serif italic">Makbool <br>Residence</h3>
-                    <p class="text-sm text-neutral-500 font-light leading-relaxed max-w-xs text-justify justify-fix">A home that celebrates its natural surroundings through clean lines and a neutral palette.</p>
-                    <div class="pt-4 flex items-center gap-3 group-hover:text-black text-neutral-400 transition-colors duration-300">
-                        <span class="text-[10px] uppercase tracking-[0.3em] font-medium">View Project</span>
+                    <span class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold block">01 — Residential</span>
+                    <h3 class="text-4xl md:text-5xl font-serif italic text-neutral-900">Makbool <br>Residence</h3>
+                    <p class="text-sm text-neutral-700 font-medium leading-relaxed max-w-xs text-justify justify-fix">A home that celebrates its natural surroundings through clean lines and a neutral palette.</p>
+                    <div class="pt-4 flex items-center gap-3 group-hover:text-black text-neutral-600 transition-colors duration-300">
+                        <span class="text-[11px] uppercase tracking-[0.3em] font-bold">View Project</span>
                         <i class="fa-solid fa-arrow-right-long text-xs transition-transform duration-500 group-hover:translate-x-2"></i>
                     </div>
                 </div>
@@ -188,31 +204,31 @@
         <a href="projects/ayurveda-college.html" class="group block">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-4 md:order-1 order-2 space-y-6 md:text-right flex flex-col md:items-end">
-                    <span class="text-[9px] uppercase tracking-editorial text-neutral-400 block">02 — Academic</span>
-                    <h3 class="text-4xl md:text-5xl font-serif italic">Ayurveda <br> Medical College</h3>
-                    <p class="text-sm text-neutral-500 font-light leading-relaxed max-w-xs text-justify md:text-right justify-fix">A holistic approach to healing, integrating nature with clinical excellence.</p>
-                    <div class="pt-4 flex items-center gap-3 group-hover:text-black text-neutral-400 transition-colors duration-300">
-                        <span class="text-[10px] uppercase tracking-[0.3em] font-medium">View Project</span>
+                    <span class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold block">02 — Academic</span>
+                    <h3 class="text-4xl md:text-5xl font-serif italic text-neutral-900">Ayurveda <br> Medical College</h3>
+                    <p class="text-sm text-neutral-700 font-medium leading-relaxed max-w-xs text-justify md:text-right justify-fix">A holistic approach to healing, integrating nature with clinical excellence.</p>
+                    <div class="pt-4 flex items-center gap-3 group-hover:text-black text-neutral-600 transition-colors duration-300">
+                        <span class="text-[11px] uppercase tracking-[0.3em] font-bold">View Project</span>
                         <i class="fa-solid fa-arrow-right-long text-xs transition-transform duration-500 group-hover:translate-x-2"></i>
                     </div>
                 </div>
-                <div class="md:col-span-8 md:order-2 order-1 overflow-hidden aspect-[16/11] bg-neutral-100">
-                    <img src="assets/images/work/ayurveda_medical_college.png" loading="lazy" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0" onload="this.classList.add('loaded')">
+                <div class="md:col-span-8 md:order-2 order-1 overflow-hidden aspect-[16/11] bg-white shadow-xl">
+                    <img src="assets/images/work/ayurveda_medical_college.png" loading="lazy" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[20%] group-hover:grayscale-0" onload="this.classList.add('loaded')">
                 </div>
             </div>
         </a>
 
         <a href="projects/sameer-residence.html" class="group block">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-                <div class="md:col-span-8 overflow-hidden aspect-[16/11] bg-neutral-100">
-                    <img src="assets/images/work/sameer_residence.png" loading="lazy" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0" onload="this.classList.add('loaded')">
+                <div class="md:col-span-8 overflow-hidden aspect-[16/11] bg-white shadow-xl">
+                    <img src="assets/images/work/sameer_residence.png" loading="lazy" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[20%] group-hover:grayscale-0" onload="this.classList.add('loaded')">
                 </div>
                 <div class="md:col-span-4 space-y-6">
-                    <span class="text-[9px] uppercase tracking-editorial text-neutral-400 block">03 — Residential</span>
-                    <h3 class="text-4xl md:text-5xl font-serif italic">Sameer <br>Residence</h3>
-                    <p class="text-sm text-neutral-500 font-light leading-relaxed max-w-xs text-justify justify-fix">Connecting indoors and outdoors with large windows and natural materials.</p>
-                    <div class="pt-4 flex items-center gap-3 group-hover:text-black text-neutral-400 transition-colors duration-300">
-                        <span class="text-[10px] uppercase tracking-[0.3em] font-medium">View Project</span>
+                    <span class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold block">03 — Residential</span>
+                    <h3 class="text-4xl md:text-5xl font-serif italic text-neutral-900">Sameer <br>Residence</h3>
+                    <p class="text-sm text-neutral-700 font-medium leading-relaxed max-w-xs text-justify justify-fix">Connecting indoors and outdoors with large windows and natural materials.</p>
+                    <div class="pt-4 flex items-center gap-3 group-hover:text-black text-neutral-600 transition-colors duration-300">
+                        <span class="text-[11px] uppercase tracking-[0.3em] font-bold">View Project</span>
                         <i class="fa-solid fa-arrow-right-long text-xs transition-transform duration-500 group-hover:translate-x-2"></i>
                     </div>
                 </div>
@@ -222,23 +238,24 @@
         <a href="projects/mobility-hub.html" class="group block">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-4 md:order-1 order-2 space-y-6 md:text-right flex flex-col md:items-end">
-                    <span class="text-[9px] uppercase tracking-editorial text-neutral-400 block">04 — Urban</span>
-                    <h3 class="text-4xl md:text-5xl font-serif italic">Calicut <br>Mobility Hub</h3>
-                    <p class="text-sm text-neutral-500 font-light leading-relaxed max-w-xs text-justify md:text-right justify-fix">Reimagining transit infrastructure as a seamless, public-centered experience.</p>
-                    <div class="pt-4 flex items-center gap-3 group-hover:text-black text-neutral-400 transition-colors duration-300">
-                        <span class="text-[10px] uppercase tracking-[0.3em] font-medium">View Project</span>
+                    <span class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold block">04 — Urban</span>
+                    <h3 class="text-4xl md:text-5xl font-serif italic text-neutral-900">Calicut <br>Mobility Hub</h3>
+                    <p class="text-sm text-neutral-700 font-medium leading-relaxed max-w-xs text-justify md:text-right justify-fix">Reimagining transit infrastructure as a seamless, public-centered experience.</p>
+                    <div class="pt-4 flex items-center gap-3 group-hover:text-black text-neutral-600 transition-colors duration-300">
+                        <span class="text-[11px] uppercase tracking-[0.3em] font-bold">View Project</span>
                         <i class="fa-solid fa-arrow-right-long text-xs transition-transform duration-500 group-hover:translate-x-2"></i>
                     </div>
                 </div>
-                <div class="md:col-span-8 md:order-2 order-1 overflow-hidden aspect-[16/11] bg-neutral-100">
-                    <img src="assets/images/work/mobility_hub.png" loading="lazy" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0" onload="this.classList.add('loaded')">
+                <div class="md:col-span-8 md:order-2 order-1 overflow-hidden aspect-[16/11] bg-white shadow-xl">
+                    <img src="assets/images/work/mobility_hub.png" loading="lazy" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale-[20%] group-hover:grayscale-0" onload="this.classList.add('loaded')">
                 </div>
             </div>
         </a>
+
     </div>
 </main>
 
-<footer class="bg-neutral-100 text-neutral-900 pt-20 pb-10 mt-20 border-t border-neutral-200">
+<footer class="bg-white/95 backdrop-blur-md text-neutral-900 pt-20 pb-10 mt-20 border-t border-neutral-200 relative z-20">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
         <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
             <div class="space-y-6">
@@ -248,34 +265,34 @@
                     </div>
                     <div class="ml-3 flex flex-col justify-center">
                         <div class="flex items-center gap-2">
-                            <span class="text-[8px] font-medium tracking-[0.4em] uppercase text-neutral-400">Ar.</span>
+                            <span class="text-[8px] font-bold tracking-[0.4em] uppercase text-neutral-500">Ar.</span>
                             <div class="h-[1px] w-6 bg-neutral-300"></div>
                         </div>
-                        <span class="text-base font-medium tracking-[0.12em] uppercase text-neutral-900">
-                            Shana <span class="font-light text-neutral-500">Rahmath</span>
+                        <span class="text-base font-bold tracking-[0.12em] uppercase text-neutral-900">
+                            Shana <span class="font-light text-neutral-600">Rahmath</span>
                         </span>
                     </div>
                 </div>
-                <p class="text-neutral-500 text-[10px] tracking-editorial leading-relaxed max-w-xs uppercase pl-1">
+                <p class="text-neutral-700 text-[10px] tracking-editorial leading-relaxed max-w-xs uppercase pl-1 font-bold">
                     Architect & Designer <br> Based in Kerala, India.
                 </p>
             </div>
             <div class="grid grid-cols-2 gap-16 md:gap-24 pt-2">
                 <div class="space-y-4">
-                    <h5 class="text-[9px] uppercase tracking-editorial text-neutral-400">Navigation</h5>
-                    <ul class="space-y-2 text-[10px] tracking-[0.3em] uppercase">
-                        <li><a href="index.html" class="text-neutral-600 hover:text-black transition duration-300">Projects</a></li>
-                        <li><a href="about.html" class="text-neutral-600 hover:text-black transition duration-300">About</a></li>
-                        <li><a href="contact.html" class="text-neutral-600 hover:text-black transition duration-300">Contact</a></li>
+                    <h5 class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold">Navigation</h5>
+                    <ul class="space-y-2 text-[11px] tracking-[0.3em] uppercase font-bold">
+                        <li><a href="index.html" class="text-neutral-700 hover:text-black transition duration-300">Projects</a></li>
+                        <li><a href="about.html" class="text-neutral-700 hover:text-black transition duration-300">About</a></li>
+                        <li><a href="contact.html" class="text-neutral-700 hover:text-black transition duration-300">Contact</a></li>
                     </ul>
                 </div>
                 <div class="space-y-4">
-                    <h5 class="text-[9px] uppercase tracking-editorial text-neutral-400">Connect</h5>
+                    <h5 class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold">Connect</h5>
                     <div class="flex items-center gap-6 pt-1">
-                        <a href="https://www.instagram.com/shana_rahmath/" target="_blank" class="text-neutral-400 hover:text-black transition-all duration-500">
+                        <a href="https://www.instagram.com/shana_rahmath/" target="_blank" class="text-neutral-600 hover:text-black transition-all duration-500">
                             <i class="fa-brands fa-instagram text-xl"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/shana-rahmath/" target="_blank" class="text-neutral-400 hover:text-black transition-all duration-500">
+                        <a href="https://www.linkedin.com/in/shana-rahmath/" target="_blank" class="text-neutral-600 hover:text-black transition-all duration-500">
                             <i class="fa-brands fa-linkedin-in text-xl"></i>
                         </a>
                     </div>
@@ -283,8 +300,8 @@
             </div>
         </div>
         <div class="pt-8 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-[9px] tracking-[0.4em] text-neutral-400 uppercase">© 2026 Ar. Shana Rahmath</p>
-            <p class="text-[9px] tracking-[0.4em] text-neutral-300 uppercase italic">Architectural Portfolio</p>
+            <p class="text-[10px] tracking-[0.4em] text-neutral-500 uppercase font-bold">© 2026 Ar. Shana Rahmath</p>
+            <p class="text-[10px] tracking-[0.4em] text-neutral-400 uppercase italic">Architectural Portfolio</p>
         </div>
     </div>
 </footer>
@@ -317,7 +334,7 @@
         lines[2].classList.toggle('-rotate-45'); lines[2].classList.toggle('-translate-y-[7px]');
     });
 
-    // Purely Automatic Carousel
+    // Automatic Carousel
     const carousel = document.getElementById('project-carousel');
     const items = document.querySelectorAll('.carousel-item');
     let currentSlide = 0;
@@ -331,7 +348,7 @@
             left: currentSlide * carousel.offsetWidth,
             behavior: 'smooth'
         });
-    }, 2500); // 2.5 seconds for a slightly slower, more elegant pace
+    }, 2500); // 2.5 seconds
 </script>
 
 </body>

@@ -30,10 +30,27 @@
         body { animation: fadeIn 1.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .justify-fix { text-justify: inter-word; hyphens: auto; }
+
+        /* ZAHA HADID STYLE FIXED BACKGROUND */
+        .fixed-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('assets/images/work/mobility_hub_view2.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: grayscale(100%) brightness(0.9) opacity(0.12);
+        }
     </style>
 </head>
 
 <body class="bg-[#FCFCFC] text-neutral-900 font-sans antialiased">
+
+<div class="fixed-bg"></div>
 
 <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-100">
     <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 md:py-10 flex justify-between items-center relative z-[70]">
@@ -45,11 +62,11 @@
                 </div>
                 <div class="ml-3 md:ml-4 flex flex-col justify-center">
                     <div class="flex items-center gap-2">
-                        <span class="text-[8px] md:text-[9px] font-medium tracking-[0.4em] md:tracking-[0.5em] uppercase text-neutral-400">Ar.</span>
-                        <div class="h-[1px] w-6 md:w-8 bg-neutral-200"></div>
+                        <span class="text-[8px] md:text-[9px] font-bold tracking-[0.4em] md:tracking-[0.5em] uppercase text-neutral-500">Ar.</span>
+                        <div class="h-[1px] w-6 md:w-8 bg-neutral-300"></div>
                     </div>
-                    <span class="text-lg md:text-xl font-medium tracking-[0.12em] md:tracking-[0.15em] uppercase text-neutral-900">
-                        Shana <span class="font-light text-neutral-500">Rahmath</span>
+                    <span class="text-lg md:text-xl font-bold tracking-[0.12em] md:tracking-[0.15em] uppercase text-neutral-900">
+                        Shana <span class="font-light text-neutral-600">Rahmath</span>
                     </span>
                 </div>
             </div>
@@ -61,21 +78,21 @@
             <span id="line3" class="w-6 h-px bg-black transition-all duration-300"></span>
         </button>
 
-        <div class="hidden md:flex items-center gap-12 uppercase text-[9px] tracking-editorial">
-            <a href="index.html" class="text-neutral-400 hover:text-black transition duration-500">Projects</a>
-            <a href="about.html" class="text-neutral-400 hover:text-black transition duration-500">About</a>
-            <a href="contact.html" class="text-black font-medium border-b border-black/20 pb-1">Contact</a>
+        <div class="hidden md:flex items-center gap-12 uppercase text-[10px] tracking-editorial font-bold">
+            <a href="index.html" class="text-neutral-500 hover:text-black transition duration-500">Projects</a>
+            <a href="about.html" class="text-neutral-500 hover:text-black transition duration-500">About</a>
+            <a href="contact.html" class="text-black border-b-2 border-black pb-1">Contact</a>
         </div>
     </div>
 
     <div id="mobile-menu" class="absolute inset-x-0 top-full bg-white border-b border-neutral-100 z-[60] flex flex-col items-center py-12 gap-8 md:hidden transition-all duration-500 ease-in-out opacity-0 pointer-events-none translate-y-[-10px]">
-        <a href="index.html" class="text-sm uppercase tracking-[0.4em] text-neutral-400 hover:text-black transition">Projects</a>
-        <a href="about.html" class="text-sm uppercase tracking-[0.4em] text-neutral-400 hover:text-black transition">About</a>
-        <a href="contact.html" class="text-sm uppercase tracking-[0.4em] text-black font-medium">Contact</a>
+        <a href="index.html" class="text-sm uppercase tracking-[0.4em] text-neutral-500 hover:text-black transition">Projects</a>
+        <a href="about.html" class="text-sm uppercase tracking-[0.4em] text-neutral-500 hover:text-black transition">About</a>
+        <a href="contact.html" class="text-sm uppercase tracking-[0.4em] text-black font-bold">Contact</a>
     </div>
 </nav>
 
-<main class="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-32">
+<main class="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-32 relative z-10 bg-white/40 backdrop-blur-[2px]">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
         <div class="lg:col-span-5 space-y-12">
@@ -83,71 +100,71 @@
                 <h1 class="text-6xl md:text-8xl font-serif italic leading-[0.9] tracking-tightest text-neutral-900 mb-8">
                     Let's <br> Connect.
                 </h1>
-                <p class="text-lg text-neutral-500 font-light leading-relaxed max-w-sm text-justify justify-fix">
+                <p class="text-lg text-neutral-800 font-medium leading-relaxed max-w-sm text-justify justify-fix">
                     For project inquiries, collaborations, or simply to say hello, feel free to reach out through any of the channels below.
                 </p>
             </header>
 
-            <div class="space-y-10 pt-12 border-t border-neutral-100">
+            <div class="space-y-10 pt-12 border-t border-neutral-300">
                 <div>
-                    <h4 class="text-[9px] uppercase tracking-editorial text-neutral-400 mb-3">Direct Email</h4>
-                    <a href="mailto:architectshanarahmath@gmail.com" class="text-xl font-serif italic hover:text-neutral-500 transition border-b border-neutral-100 pb-1 flex items-center gap-3">
-                        <i class="fa-regular fa-envelope text-sm text-neutral-400"></i>
+                    <h4 class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold mb-3">Direct Email</h4>
+                    <a href="mailto:architectshanarahmath@gmail.com" class="text-xl md:text-2xl font-serif italic text-neutral-900 hover:text-neutral-600 transition border-b border-neutral-200 pb-1 flex items-center gap-3">
+                        <i class="fa-regular fa-envelope text-sm text-neutral-500"></i>
                         <span class="truncate">architectshanarahmath@gmail.com</span>
                     </a>
                 </div>
 
                 <div>
-                    <h4 class="text-[9px] uppercase tracking-editorial text-neutral-400 mb-3">Phone Number</h4>
-                    <a href="tel:+919061997482" class="text-xl font-serif italic hover:text-neutral-500 transition flex items-center gap-3">
-                        <i class="fa-solid fa-mobile-screen-button text-sm text-neutral-400"></i>
+                    <h4 class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold mb-3">Phone Number</h4>
+                    <a href="tel:+919061997482" class="text-xl md:text-2xl font-serif italic text-neutral-900 hover:text-neutral-600 transition flex items-center gap-3">
+                        <i class="fa-solid fa-mobile-screen-button text-sm text-neutral-500"></i>
                         <span>+91 9061 997 482</span>
                     </a>
                 </div>
 
                 <div>
-                    <h4 class="text-[9px] uppercase tracking-editorial text-neutral-400 mb-3">Location</h4>
-                    <p class="text-xl font-serif italic text-neutral-800 flex items-center gap-3">
-                        <i class="fa-solid fa-location-dot text-sm text-neutral-400"></i>
+                    <h4 class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold mb-3">Location</h4>
+                    <p class="text-xl md:text-2xl font-serif italic text-neutral-900 flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-sm text-neutral-500"></i>
                         <span>Perinthalmanna, Kerala, India</span>
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="lg:col-span-7 bg-white p-8 md:p-16 border border-neutral-100 shadow-sm">
+        <div class="lg:col-span-7 bg-white p-8 md:p-16 border border-neutral-100 shadow-2xl">
             <form action="https://formspree.io/f/xpqjybdr" method="POST" class="space-y-10">
                 <input type="hidden" name="_subject" value="New Inquiry from Portfolio Site">
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="space-y-3">
-                        <label class="text-[9px] uppercase tracking-editorial text-neutral-400">Name</label>
+                        <label class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold">Name</label>
                         <input type="text" name="name" placeholder="Your Full Name" required
-                               class="w-full bg-transparent border-b border-neutral-200 py-3 focus:outline-none focus:border-black transition placeholder:text-neutral-200 text-sm">
+                               class="w-full bg-transparent border-b-2 border-neutral-200 py-3 focus:outline-none focus:border-black transition placeholder:text-neutral-300 text-sm font-medium text-black">
                     </div>
                     <div class="space-y-3">
-                        <label class="text-[9px] uppercase tracking-editorial text-neutral-400">Email Address</label>
+                        <label class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold">Email Address</label>
                         <input type="email" name="email" placeholder="email@example.com" required
-                               class="w-full bg-transparent border-b border-neutral-200 py-3 focus:outline-none focus:border-black transition placeholder:text-neutral-200 text-sm">
+                               class="w-full bg-transparent border-b-2 border-neutral-200 py-3 focus:outline-none focus:border-black transition placeholder:text-neutral-300 text-sm font-medium text-black">
                     </div>
                 </div>
 
                 <div class="space-y-3">
-                    <label class="text-[9px] uppercase tracking-editorial text-neutral-400">Project Subject</label>
+                    <label class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold">Project Subject</label>
                     <input type="text" name="subject" placeholder="What are you looking for?" required
-                           class="w-full bg-transparent border-b border-neutral-200 py-3 focus:outline-none focus:border-black transition placeholder:text-neutral-200 text-sm">
+                           class="w-full bg-transparent border-b-2 border-neutral-200 py-3 focus:outline-none focus:border-black transition placeholder:text-neutral-300 text-sm font-medium text-black">
                 </div>
 
                 <div class="space-y-3">
-                    <label class="text-[9px] uppercase tracking-editorial text-neutral-400">Message</label>
+                    <label class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold">Message</label>
                     <textarea name="message" rows="4" placeholder="Tell me about your project..." required
-                              class="w-full bg-transparent border-b border-neutral-200 py-3 focus:outline-none focus:border-black transition resize-none placeholder:text-neutral-200 text-sm"></textarea>
+                              class="w-full bg-transparent border-b-2 border-neutral-200 py-3 focus:outline-none focus:border-black transition resize-none placeholder:text-neutral-300 text-sm font-medium text-black"></textarea>
                 </div>
 
                 <div class="pt-4">
                     <button type="submit"
-                            class="w-full md:w-auto bg-neutral-900 text-white px-12 py-5 text-[9px] uppercase tracking-editorial font-medium
-                                   hover:bg-white hover:text-neutral-900 border border-neutral-900 transition-all duration-500">
+                            class="w-full md:w-auto bg-neutral-900 text-white px-12 py-5 text-[10px] uppercase tracking-editorial font-bold
+                                   hover:bg-white hover:text-neutral-900 border-2 border-neutral-900 transition-all duration-500">
                         Submit Inquiry
                     </button>
                 </div>
@@ -155,7 +172,8 @@
         </div>
     </div>
 </main>
-<footer class="bg-neutral-100 text-neutral-900 pt-20 pb-10 mt-20 border-t border-neutral-200">
+
+<footer class="bg-white/95 backdrop-blur-md text-neutral-900 pt-20 pb-10 mt-20 border-t border-neutral-200 relative z-20">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
 
         <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
@@ -167,36 +185,36 @@
                     </div>
                     <div class="ml-3 flex flex-col justify-center">
                         <div class="flex items-center gap-2">
-                            <span class="text-[8px] font-medium tracking-[0.4em] uppercase text-neutral-400">Ar.</span>
+                            <span class="text-[8px] font-bold tracking-[0.4em] uppercase text-neutral-500">Ar.</span>
                             <div class="h-[1px] w-6 bg-neutral-300"></div>
                         </div>
-                        <span class="text-base font-medium tracking-[0.12em] uppercase text-neutral-900">
-                            Shana <span class="font-light text-neutral-500">Rahmath</span>
+                        <span class="text-base font-bold tracking-[0.12em] uppercase text-neutral-900">
+                            Shana <span class="font-light text-neutral-600">Rahmath</span>
                         </span>
                     </div>
                 </div>
 
-                <p class="text-neutral-500 text-[10px] tracking-editorial leading-relaxed max-w-xs uppercase pl-1">
+                <p class="text-neutral-800 text-[10px] tracking-editorial leading-relaxed max-w-xs uppercase pl-1 font-bold">
                     Architect & Designer <br> Based in Kerala, India.
                 </p>
             </div>
 
             <div class="grid grid-cols-2 gap-16 md:gap-24 pt-2">
                 <div class="space-y-4">
-                    <h5 class="text-[9px] uppercase tracking-editorial text-neutral-400">Navigation</h5>
-                    <ul class="space-y-2 text-[10px] tracking-[0.3em] uppercase">
-                        <li><a href="index.html" class="text-neutral-600 hover:text-black transition duration-300">Projects</a></li>
-                        <li><a href="about.html" class="text-neutral-600 hover:text-black transition duration-300">About</a></li>
-                        <li><a href="contact.html" class="text-neutral-600 hover:text-black transition duration-300">Contact</a></li>
+                    <h5 class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold">Navigation</h5>
+                    <ul class="space-y-2 text-[11px] tracking-[0.3em] uppercase font-bold">
+                        <li><a href="index.html" class="text-neutral-800 hover:text-black transition duration-300">Projects</a></li>
+                        <li><a href="about.html" class="text-neutral-800 hover:text-black transition duration-300">About</a></li>
+                        <li><a href="contact.html" class="text-neutral-800 hover:text-black transition duration-300 border-b border-black">Contact</a></li>
                     </ul>
                 </div>
                 <div class="space-y-4">
-                    <h5 class="text-[9px] uppercase tracking-editorial text-neutral-400">Connect</h5>
+                    <h5 class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold">Connect</h5>
                     <div class="flex items-center gap-6 pt-1">
-                        <a href="https://www.instagram.com/shana_rahmath/" target="_blank" class="text-neutral-400 hover:text-black transition-all duration-500">
+                        <a href="https://www.instagram.com/shana_rahmath/" target="_blank" class="text-neutral-600 hover:text-black transition-all duration-500">
                             <i class="fa-brands fa-instagram text-xl"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/shana-rahmath/" target="_blank" class="text-neutral-400 hover:text-black transition-all duration-500">
+                        <a href="https://www.linkedin.com/in/shana-rahmath/" target="_blank" class="text-neutral-600 hover:text-black transition-all duration-500">
                             <i class="fa-brands fa-linkedin-in text-xl"></i>
                         </a>
                     </div>
@@ -205,34 +223,29 @@
         </div>
 
         <div class="pt-8 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-[9px] tracking-[0.4em] text-neutral-400 uppercase">
+            <p class="text-[10px] tracking-[0.4em] text-neutral-500 uppercase font-bold">
                 © 2026 Ar. Shana Rahmath
             </p>
-            <p class="text-[9px] tracking-[0.4em] text-neutral-300 uppercase italic">
+            <p class="text-[10px] tracking-[0.4em] text-neutral-400 uppercase italic">
                 Architectural Portfolio
             </p>
         </div>
 
     </div>
 </footer>
+
 <script>
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const line1 = document.getElementById('line1');
-    const line2 = document.getElementById('line2');
-    const line3 = document.getElementById('line3');
+    const lines = [document.getElementById('line1'), document.getElementById('line2'), document.getElementById('line3')];
 
     menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('opacity-0');
         mobileMenu.classList.toggle('pointer-events-none');
         mobileMenu.classList.toggle('translate-y-0');
-        mobileMenu.classList.toggle('translate-y-[-10px]');
-
-        line1.classList.toggle('rotate-45');
-        line1.classList.toggle('translate-y-[7px]');
-        line2.classList.toggle('opacity-0');
-        line3.classList.toggle('-rotate-45');
-        line3.classList.toggle('-translate-y-[7px]');
+        lines[0].classList.toggle('rotate-45'); lines[0].classList.toggle('translate-y-[7px]');
+        lines[1].classList.toggle('opacity-0');
+        lines[2].classList.toggle('-rotate-45'); lines[2].classList.toggle('-translate-y-[7px]');
     });
 </script>
 

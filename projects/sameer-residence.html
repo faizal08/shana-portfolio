@@ -7,7 +7,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@200;300;400;500;700&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -30,10 +30,27 @@
         body { animation: fadeIn 1.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .justify-fix { text-justify: inter-word; hyphens: auto; }
+
+        /* ZAHA HADID STYLE FIXED BACKGROUND */
+        .fixed-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('../assets/images/work/mobility_hub_view2.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: grayscale(100%) brightness(0.9) opacity(0.12);
+        }
     </style>
 </head>
 
 <body class="bg-[#FCFCFC] text-neutral-900 font-sans antialiased">
+
+<div class="fixed-bg"></div>
 
 <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-100">
     <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 md:py-10 flex justify-between items-center relative z-[70]">
@@ -44,11 +61,11 @@
                 </div>
                 <div class="ml-3 md:ml-4 flex flex-col justify-center">
                     <div class="flex items-center gap-2">
-                        <span class="text-[8px] md:text-[9px] font-medium tracking-[0.4em] md:tracking-[0.5em] uppercase text-neutral-400">Ar.</span>
-                        <div class="h-[1px] w-6 md:w-8 bg-neutral-200"></div>
+                        <span class="text-[8px] md:text-[9px] font-bold tracking-[0.4em] md:tracking-[0.5em] uppercase text-neutral-500">Ar.</span>
+                        <div class="h-[1px] w-6 md:w-8 bg-neutral-300"></div>
                     </div>
-                    <span class="text-lg md:text-xl font-medium tracking-[0.12em] md:tracking-[0.15em] uppercase text-neutral-900">
-                        Shana <span class="font-light text-neutral-500">Rahmath</span>
+                    <span class="text-lg md:text-xl font-bold tracking-[0.12em] md:tracking-[0.15em] uppercase text-neutral-900">
+                        Shana <span class="font-light text-neutral-600">Rahmath</span>
                     </span>
                 </div>
             </div>
@@ -60,38 +77,38 @@
             <span id="line3" class="w-6 h-px bg-black transition-all duration-300"></span>
         </button>
 
-        <div class="hidden md:flex items-center gap-12 uppercase text-[9px] tracking-editorial">
-            <a href="../index.html" class="text-black font-medium border-b border-black/20 pb-1">Projects</a>
-            <a href="../about.html" class="text-neutral-400 hover:text-black transition duration-500">About</a>
-            <a href="../contact.html" class="text-neutral-400 hover:text-black transition duration-500">Contact</a>
+        <div class="hidden md:flex items-center gap-12 uppercase text-[10px] tracking-editorial font-bold">
+            <a href="../index.html" class="text-black border-b-2 border-black pb-1">Projects</a>
+            <a href="../about.html" class="text-neutral-500 hover:text-black transition duration-500">About</a>
+            <a href="../contact.html" class="text-neutral-500 hover:text-black transition duration-500">Contact</a>
         </div>
     </div>
 
     <div id="mobile-menu" class="absolute inset-x-0 top-full bg-white border-b border-neutral-100 z-[60] flex flex-col items-center py-12 gap-8 md:hidden transition-all duration-500 ease-in-out opacity-0 pointer-events-none translate-y-[-10px]">
-        <a href="../index.html" class="text-sm uppercase tracking-[0.4em] text-black font-medium">Projects</a>
-        <a href="../about.html" class="text-sm uppercase tracking-[0.4em] text-neutral-400 hover:text-black transition">About</a>
-        <a href="../contact.html" class="text-sm uppercase tracking-[0.4em] text-neutral-400 hover:text-black transition">Contact</a>
+        <a href="../index.html" class="text-sm uppercase tracking-[0.4em] text-black font-bold">Projects</a>
+        <a href="../about.html" class="text-sm uppercase tracking-[0.4em] text-neutral-500 hover:text-black transition">About</a>
+        <a href="../contact.html" class="text-sm uppercase tracking-[0.4em] text-neutral-500 hover:text-black transition">Contact</a>
     </div>
 </nav>
 
-<main class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-24">
+<main class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-24 relative z-10 bg-white/40 backdrop-blur-[2px]">
     <div class="mb-12">
-        <a href="../index.html" class="text-[9px] uppercase tracking-editorial text-neutral-400 hover:text-black transition-all flex items-center gap-4">
+        <a href="../index.html" class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold hover:text-black transition-all flex items-center gap-4">
             <span class="text-xl">←</span> Back to Projects
         </a>
     </div>
 
     <div class="mb-16">
-        <h1 class="text-4xl md:text-6xl font-serif italic leading-tight tracking-tightest text-neutral-900 mb-6 whitespace-nowrap overflow-hidden text-ellipsis">
+        <h1 class="text-4xl md:text-7xl font-serif italic leading-tight tracking-tightest text-neutral-900 mb-6">
             Sameer Residence
         </h1>
         <div class="flex items-center gap-4">
-            <div class="h-px w-8 bg-neutral-200"></div>
-            <p class="uppercase tracking-editorial text-[9px] text-neutral-400">Residential | Vettathur | 2254 SQFT</p>
+            <div class="h-[2px] w-12 bg-neutral-900"></div>
+            <p class="uppercase tracking-editorial text-[10px] text-neutral-900 font-bold">Residential | Vettathur | 2254 SQFT</p>
         </div>
     </div>
 
-    <div class="aspect-[16/9] overflow-hidden bg-neutral-100 mb-20 shadow-sm">
+    <div class="aspect-[16/9] overflow-hidden bg-white mb-20 shadow-2xl">
         <img src="../assets/images/work/sameer_residence.png"
              alt="Sameer Residence Exterior"
              class="w-full h-full object-cover">
@@ -100,8 +117,8 @@
     <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
         <div class="md:col-span-8 space-y-12">
             <section>
-                <h4 class="text-[9px] uppercase tracking-editorial text-neutral-400 mb-8 border-b border-neutral-100 pb-2">Narrative</h4>
-                <div class="space-y-8 text-lg text-neutral-500 font-light leading-relaxed text-justify justify-fix">
+                <h4 class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold mb-8 border-b border-neutral-300 pb-2">Narrative</h4>
+                <div class="space-y-8 text-lg text-neutral-800 font-medium leading-relaxed text-justify justify-fix">
                     <p>
                         A home that celebrates its natural surroundings and creates a <span class="text-neutral-900 italic font-serif text-xl">seamless connection</span> with the outdoors. Clean lines, minimalist furniture, and a neutral colour palette define the modern feel of this space, tailored for tranquility.
                     </p>
@@ -113,41 +130,40 @@
         </div>
 
         <div class="md:col-span-4">
-            <div class="bg-white p-10 border border-neutral-100 sticky top-32">
-                <h4 class="text-[9px] uppercase tracking-editorial text-neutral-400 mb-8 border-b border-neutral-100 pb-2">Specifications</h4>
+            <div class="bg-white p-10 border border-neutral-200 shadow-xl sticky top-32">
+                <h4 class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold mb-8 border-b border-neutral-300 pb-2">Specifications</h4>
                 <div class="space-y-6">
                     <div>
-                        <span class="block text-[8px] uppercase tracking-widest text-neutral-300 mb-1">Location</span>
-                        <span class="text-sm font-medium uppercase tracking-wider">Vettathur, Kerala</span>
+                        <span class="block text-[9px] uppercase tracking-widest text-neutral-400 font-bold mb-1">Location</span>
+                        <span class="text-sm font-bold uppercase tracking-wider text-neutral-900">Vettathur, Kerala</span>
                     </div>
                     <div>
-                        <span class="block text-[8px] uppercase tracking-widest text-neutral-300 mb-1">Year</span>
-                        <span class="text-sm font-medium uppercase tracking-wider">2023</span>
+                        <span class="block text-[9px] uppercase tracking-widest text-neutral-400 font-bold mb-1">Year</span>
+                        <span class="text-sm font-bold uppercase tracking-wider text-neutral-900">2023</span>
                     </div>
                     <div>
-                        <span class="block text-[8px] uppercase tracking-widest text-neutral-300 mb-1">Area</span>
-                        <span class="text-sm font-medium uppercase tracking-wider">2254 SQFT</span>
+                        <span class="block text-[9px] uppercase tracking-widest text-neutral-400 font-bold mb-1">Area</span>
+                        <span class="text-sm font-bold uppercase tracking-wider text-neutral-900">2254 SQFT</span>
                     </div>
                     <div>
-                        <span class="block text-[8px] uppercase tracking-widest text-neutral-300 mb-1">Status</span>
-                        <span class="text-sm font-medium uppercase tracking-wider">Completed</span>
+                        <span class="block text-[9px] uppercase tracking-widest text-neutral-400 font-bold mb-1">Status</span>
+                        <span class="text-sm font-bold uppercase tracking-wider text-neutral-900">Completed</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="pb-20 border-t border-neutral-100 pt-20">
-        <a href="../index.html" class="inline-block bg-neutral-900 text-white px-12 py-5 text-[9px] uppercase tracking-editorial font-medium hover:bg-white hover:text-neutral-900 border border-neutral-900 transition-all duration-500">
+    <div class="pb-20 border-t border-neutral-300 pt-20">
+        <a href="../index.html" class="inline-block bg-neutral-900 text-white px-12 py-5 text-[10px] uppercase tracking-editorial font-bold hover:bg-white hover:text-neutral-900 border-2 border-neutral-900 transition-all duration-500">
             View All Projects
         </a>
     </div>
 </main>
-<footer class="bg-neutral-100 text-neutral-900 pt-20 pb-10 mt-20 border-t border-neutral-200">
+
+<footer class="bg-white/95 backdrop-blur-md text-neutral-900 pt-20 pb-10 mt-20 border-t border-neutral-200 relative z-20">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-
         <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
-
             <div class="space-y-6">
                 <div class="flex items-center">
                     <div class="w-10 h-10 bg-neutral-900 flex items-center justify-center">
@@ -155,36 +171,35 @@
                     </div>
                     <div class="ml-3 flex flex-col justify-center">
                         <div class="flex items-center gap-2">
-                            <span class="text-[8px] font-medium tracking-[0.4em] uppercase text-neutral-400">Ar.</span>
+                            <span class="text-[8px] font-bold tracking-[0.4em] uppercase text-neutral-500">Ar.</span>
                             <div class="h-[1px] w-6 bg-neutral-300"></div>
                         </div>
-                        <span class="text-base font-medium tracking-[0.12em] uppercase text-neutral-900">
-                            Shana <span class="font-light text-neutral-500">Rahmath</span>
+                        <span class="text-base font-bold tracking-[0.12em] uppercase text-neutral-900">
+                            Shana <span class="font-light text-neutral-600">Rahmath</span>
                         </span>
                     </div>
                 </div>
-
-                <p class="text-neutral-500 text-[10px] tracking-editorial leading-relaxed max-w-xs uppercase pl-1">
+                <p class="text-neutral-800 text-[10px] tracking-editorial leading-relaxed max-w-xs uppercase pl-1 font-bold">
                     Architect & Designer <br> Based in Kerala, India.
                 </p>
             </div>
 
             <div class="grid grid-cols-2 gap-16 md:gap-24 pt-2">
                 <div class="space-y-4">
-                    <h5 class="text-[9px] uppercase tracking-editorial text-neutral-400">Navigation</h5>
-                    <ul class="space-y-2 text-[10px] tracking-[0.3em] uppercase">
-                        <li><a href="../index.html" class="text-neutral-600 hover:text-black transition duration-300">Projects</a></li>
-                        <li><a href="../about.html" class="text-neutral-600 hover:text-black transition duration-300">About</a></li>
-                        <li><a href="../contact.html" class="text-neutral-600 hover:text-black transition duration-300">Contact</a></li>
+                    <h5 class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold">Navigation</h5>
+                    <ul class="space-y-2 text-[11px] tracking-[0.3em] uppercase font-bold">
+                        <li><a href="../index.html" class="text-neutral-800 hover:text-black transition duration-300">Projects</a></li>
+                        <li><a href="../about.html" class="text-neutral-800 hover:text-black transition duration-300">About</a></li>
+                        <li><a href="../contact.html" class="text-neutral-800 hover:text-black transition duration-300">Contact</a></li>
                     </ul>
                 </div>
                 <div class="space-y-4">
-                    <h5 class="text-[9px] uppercase tracking-editorial text-neutral-400">Connect</h5>
+                    <h5 class="text-[10px] uppercase tracking-editorial text-neutral-500 font-bold">Connect</h5>
                     <div class="flex items-center gap-6 pt-1">
-                        <a href="https://www.instagram.com/shana_rahmath/" target="_blank" class="text-neutral-400 hover:text-black transition-all duration-500">
+                        <a href="https://www.instagram.com/shana_rahmath/" target="_blank" class="text-neutral-600 hover:text-black transition-all duration-500">
                             <i class="fa-brands fa-instagram text-xl"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/shana-rahmath/" target="_blank" class="text-neutral-400 hover:text-black transition-all duration-500">
+                        <a href="https://www.linkedin.com/in/shana-rahmath/" target="_blank" class="text-neutral-600 hover:text-black transition-all duration-500">
                             <i class="fa-brands fa-linkedin-in text-xl"></i>
                         </a>
                     </div>
@@ -193,35 +208,24 @@
         </div>
 
         <div class="pt-8 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-[9px] tracking-[0.4em] text-neutral-400 uppercase">
-                © 2026 Ar. Shana Rahmath
-            </p>
-            <p class="text-[9px] tracking-[0.4em] text-neutral-300 uppercase italic">
-                Architectural Portfolio
-            </p>
+            <p class="text-[10px] tracking-[0.4em] text-neutral-500 uppercase font-bold">© 2026 Ar. Shana Rahmath</p>
+            <p class="text-[10px] tracking-[0.4em] text-neutral-400 uppercase italic text-[10px]">Architectural Portfolio</p>
         </div>
-
     </div>
 </footer>
 
 <script>
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const line1 = document.getElementById('line1');
-    const line2 = document.getElementById('line2');
-    const line3 = document.getElementById('line3');
+    const lines = [document.getElementById('line1'), document.getElementById('line2'), document.getElementById('line3')];
 
     menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('opacity-0');
         mobileMenu.classList.toggle('pointer-events-none');
         mobileMenu.classList.toggle('translate-y-0');
-        mobileMenu.classList.toggle('translate-y-[-10px]');
-
-        line1.classList.toggle('rotate-45');
-        line1.classList.toggle('translate-y-[7px]');
-        line2.classList.toggle('opacity-0');
-        line3.classList.toggle('-rotate-45');
-        line3.classList.toggle('-translate-y-[7px]');
+        lines[0].classList.toggle('rotate-45'); lines[0].classList.toggle('translate-y-[7px]');
+        lines[1].classList.toggle('opacity-0');
+        lines[2].classList.toggle('-rotate-45'); lines[2].classList.toggle('-translate-y-[7px]');
     });
 </script>
 
