@@ -53,7 +53,7 @@ Built with **Modern CSS (Tailwind)**, it ensures a lightning-fast user experienc
 ### Local Setup
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/faizal08/shana-portfolio.git](https://github.com/faizal08/shana-portfolio.git)
+   git clone https://github.com/faizal08/shana-portfolio.git
    ``````````
 
 2. **Navigate to the directory:**
