@@ -21,9 +21,7 @@ Built with **Modern CSS (Tailwind)**, it ensures a lightning-fast user experienc
 
 ## 📸 Visual Preview
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/faizal08/shana-portfolio/main/public/screenshot.png" width="800" alt="Portfolio Preview">
-</div>
+![Shana Portfolio Preview](portfoliopreview.png)
 
 ---
 
