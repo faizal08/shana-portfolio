@@ -7,7 +7,6 @@
 [![Vercel](https://img.shields.io/badge/Vercel-Hosted-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://shana-portfolio-beta.vercel.app)
 [![Status](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)](#)
 
-**[View Live Demo](https://shana-portfolio-beta.vercel.app)**
 </div>
 
 ---
