@@ -75,7 +75,7 @@ Any push to the main branch triggers an automatic build and production update.
 Live URL: https://shana-portfolio-beta.vercel.app
 
 **Contact & Credits**
-
+----------------------
 Architect: Shana
 
 Developer: Faizal
