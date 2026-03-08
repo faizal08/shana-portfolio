@@ -14,7 +14,7 @@ Live URL: https://shana-portfolio-beta.vercel.app
 
 
 ## 📖 Project Overview
-This is a premium, responsive portfolio website designed specifically for an architect. The project focuses on clean typography, high-quality imagery, and a grid-based layout to showcase architectural designs, floor plans, and project narratives.
+This is a responsive portfolio website designed specifically for an architect. The project focuses on clean typography, high-quality imagery, and a grid-based layout to showcase architectural designs, floor plans, and project narratives.
 
 Built with **Modern CSS (Tailwind)**, it ensures a lightning-fast user experience with a focus on "Mobile-First" design.
 
